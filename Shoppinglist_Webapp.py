@@ -36,5 +36,5 @@ else:
 
             st.rerun()
 
-x = st.text_input(label=" ", placeholder="Enter an item...", key="item_8554321", on_change=write_item)
+x = st.text_input(label=" ", value="", placeholder="Enter an item...", key="item_8554321", on_change=write_item)
 # st.session_state
