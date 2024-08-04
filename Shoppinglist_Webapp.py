@@ -11,6 +11,7 @@ def write_item():
     item = st.session_state["item_8554321"] + "\n"
     shopping_list.append(item)
     pm.write_shopping_list(shopping_list)
+    st.session_state.item_8554321 = ""
 
 
 date_time = time.strftime("%I:%M %p %A, %d %B %Y")
@@ -36,5 +37,5 @@ else:
 
             st.rerun()
 
-x = st.text_input(label=" ", value="", placeholder="Enter an item...", key="item_8554321", on_change=write_item)
+st.text_input(label=" ", placeholder="Enter an item...", key="item_8554321", on_change=write_item)
 # st.session_state
