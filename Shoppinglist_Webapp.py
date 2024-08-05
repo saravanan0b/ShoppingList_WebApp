@@ -1,5 +1,6 @@
-import time, os
+import pytz, os
 import streamlit as st
+from datetime import datetime
 import Shoppinglist_Modules as pm
 
 # if not os.path.exists("shopping_list.txt"):
@@ -14,7 +15,9 @@ def write_item():
     st.session_state.item_8554321 = ""
 
 
-date_time = time.strftime("%I:%M %p %A, %d %B %Y")
+IndiaTz = pytz.timezone("Asia/Calcutta") 
+timeInIndia = datetime.now(IndiaTz)
+date_time = timeInIndia.strftime("%I:%M %p %A, %d %B %Y")
 shopping_list = pm.get_shopping_list()
 
 st.title("shopping list app")
